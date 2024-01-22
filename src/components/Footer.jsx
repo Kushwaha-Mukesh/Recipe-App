@@ -10,9 +10,9 @@ const Footer = () => {
   ];
   return (
     <div className="footer">
-      <p>Its {day[new Date().getDay()]}</p>
+      <h2>Its {day[new Date().getDay()]}</h2>
       <img src="recipe logo.png" alt="logo" className="logo" />
-      <p>Discover Delicious Recipes</p>
+      <h3>Discover Delicious Recipes</h3>
       <p>Explore a world of Flavors!</p>
     </div>
   );
