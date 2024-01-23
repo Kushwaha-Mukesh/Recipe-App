@@ -14,6 +14,7 @@ const Footer = () => {
       <img src="recipe logo.png" alt="logo" className="logo" />
       <h3>Discover Delicious Recipes</h3>
       <p>Explore a world of Flavors!</p>
+      <span>&copy; 2024 Mukesh Kushwaha</span>
     </div>
   );
 };
