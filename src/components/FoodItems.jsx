@@ -1,18 +1,11 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import FoodItem from "./FoodItem";
 const FoodItems = () => {
-  const [recipe, setRecipe] = useState([]);
-  const fetchRecipe = async () => {
-    const res = await axios.get("https://dummyjson.com/recipes");
-    setRecipe(res.data.recipes);
-  };
-  useEffect(() => {
-    fetchRecipe();
-  }, []);
+  const recipes = useSelector((store) => store.foodItem);
   return (
     <div className="container recipe-container">
-      {recipe.length > 0 && <FoodItem recipes={recipe} />}
+      {recipes.length > 0 &&
+        recipes.map((recipe) => <FoodItem key={recipe.id} recipe={recipe} />)}
     </div>
   );
 };
