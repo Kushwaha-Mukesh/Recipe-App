@@ -24,14 +24,26 @@ const favoriteItemSlice = createSlice({
   },
 });
 
+const searchItemSlice = createSlice({
+  name: "searchItem",
+  initialState: [],
+  reducers: {
+    setSearchItem: (state, action) => {
+      return [...action.payload];
+    },
+  },
+});
+
 const store = configureStore({
   reducer: {
     favoriteItem: favoriteItemSlice.reducer,
     foodItem: foodItemSlice.reducer,
+    searchItem: searchItemSlice.reducer,
   },
 });
 
 export const { setFavoriteItem, removeFavoriteItem } =
   favoriteItemSlice.actions;
 export const { setFoodItem } = foodItemSlice.actions;
+export const { setSearchItem } = searchItemSlice.actions;
 export default store;

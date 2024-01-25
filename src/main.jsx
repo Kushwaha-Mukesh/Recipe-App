@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation.jsx";
 import Favorite from "./components/Favorite.jsx";
 import { Provider } from "react-redux";
 import store from "./index.js";
+import SearchItem from "./components/SearchItem.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const routes = createBrowserRouter([
       {
         path: "/favorites",
         element: <Favorite />,
+      },
+      {
+        path: "/search",
+        element: <SearchItem />,
       },
     ],
   },

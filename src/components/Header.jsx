@@ -1,11 +1,27 @@
 import { CiHeart } from "react-icons/ci";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { FcLike } from "react-icons/fc";
+import { useRef } from "react";
+import axios from "axios";
+import { setSearchItem } from "../index.js";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const favItems = useSelector((store) => store.favoriteItem);
   const fav = favItems.length > 0;
+  const searchRef = useRef();
+  const searchItem = async (e) => {
+    if (e.key === "Enter") {
+      const search = searchRef.current.value;
+      const res = await axios.get(
+        `https://dummyjson.com/recipes/search?q=${search}`
+      );
+      dispatch(setSearchItem(res.data.recipes));
+      navigate("/search");
+    }
+  };
   return (
     <div className="header container">
       <Link to={"/"}>
@@ -18,6 +34,8 @@ const Header = () => {
           id=""
           className="search"
           placeholder="search food item"
+          ref={searchRef}
+          onKeyDown={(e) => searchItem(e)}
         />
         <p className="fav">
           <Link to={"/favorites"}>
