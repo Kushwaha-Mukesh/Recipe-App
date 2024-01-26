@@ -2,7 +2,8 @@ import { CiHeart } from "react-icons/ci";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { FcLike } from "react-icons/fc";
 import { useDispatch, useSelector } from "react-redux";
-import store, { setFavoriteItem, removeFavoriteItem } from "../index.js";
+import { setFavoriteItem, removeFavoriteItem } from "../index.js";
+import { Link } from "react-router-dom";
 
 const FoodItem = ({ recipe }) => {
   const dispatch = useDispatch();
@@ -29,11 +30,12 @@ const FoodItem = ({ recipe }) => {
             <CiHeart className="heart" onClick={() => addFav(recipe)} />
           )}
         </span>
-
-        <span>
-          Recipe
-          <BsArrowRightCircleFill className="arrow" />
-        </span>
+        <Link to={`/recipe/${recipe.id}`} className="link">
+          <span>
+            Recipe
+            <BsArrowRightCircleFill className="arrow" />
+          </span>
+        </Link>
       </p>
     </div>
   );

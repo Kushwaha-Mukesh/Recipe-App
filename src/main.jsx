@@ -9,6 +9,7 @@ import Favorite from "./components/Favorite.jsx";
 import { Provider } from "react-redux";
 import store from "./index.js";
 import SearchItem from "./components/SearchItem.jsx";
+import Recipe from "./components/Recipe.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const routes = createBrowserRouter([
       {
         path: "/search",
         element: <SearchItem />,
+      },
+      {
+        path: "/recipe/:id",
+        element: <Recipe />,
       },
     ],
   },
