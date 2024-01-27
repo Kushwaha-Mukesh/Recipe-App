@@ -5,6 +5,7 @@ import { FcLike } from "react-icons/fc";
 import { useRef } from "react";
 import axios from "axios";
 import { setSearchItem } from "../index.js";
+import Navigation from "./Navigation.jsx";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -25,8 +26,9 @@ const Header = () => {
   return (
     <div className="header container">
       <Link to={"/"}>
-        <img src="recipe logo.png" alt="logo" className="logo" />
+        <img src="Lunch time.gif" alt="logo" className="logo" />
       </Link>
+      <Navigation />
       <div className="right-box">
         <input
           type="search"

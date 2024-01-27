@@ -19,6 +19,7 @@ body {
 
 .logo {
   width: 8rem;
+  background-color: rgb(22, 22, 22);
 }
 
 .right-box {
@@ -51,6 +52,15 @@ body {
   cursor: pointer;
 }
 
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -64,8 +74,12 @@ body {
   font-size: 25px;
 }
 
+.carousel-box {
+  width: 700px;
+}
+
 .carousel-img-div {
-  height: 80vh;
+  height: 70vh;
   background-repeat: no-repeat no-repeat;
   background-position: center center;
   background-size: cover;
@@ -93,26 +107,23 @@ body {
 }
 
 .navigation {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: rgb(22, 22, 22);
-  padding: 15px 15px 5px 15px;
   width: fit-content;
   margin: auto;
-  border-radius: 30px;
-  position: relative;
-  top: -30px;
 }
 
 .navigation p {
-  padding: 0 25px;
-  border-right: 1px solid white;
+  margin-left: 25px;
+  transition: all 0.3s ease-in-out;
 }
 
-.navigation p:last-child {
-  border: none;
+.navigation p:hover {
+  color: red;
+  border-bottom: 1px solid red;
 }
 
 .recipe-container {
