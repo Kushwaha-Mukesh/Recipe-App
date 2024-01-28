@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import store from "./index.js";
 import SearchItem from "./components/SearchItem.jsx";
 import Recipe from "./components/Recipe.jsx";
+import MealCategory from "./components/MealCategory.jsx";
 
 const routes = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const routes = createBrowserRouter([
       {
         path: "/recipe/:id",
         element: <Recipe />,
+      },
+      {
+        path: "/meal/:meal",
+        element: <MealCategory />,
       },
     ],
   },
