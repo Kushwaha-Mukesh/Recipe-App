@@ -35,7 +35,7 @@ const Header = () => {
           name="search"
           id=""
           className="search"
-          placeholder="search food item"
+          placeholder="search food item by name"
           ref={searchRef}
           onKeyDown={(e) => searchItem(e)}
         />

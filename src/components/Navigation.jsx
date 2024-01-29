@@ -5,22 +5,22 @@ const Navigation = () => {
   return (
     <div className="navigation">
       <Link to={"/meal/Breakfast"} className="link">
-        <p className={meal === "Breakfast" && "click"}>Breakfast</p>
+        <p className={meal === "Breakfast" ? "click" : undefined}>Breakfast</p>
       </Link>
       <Link to={"/meal/Lunch"} className="link">
-        <p className={meal === "Lunch" && "click"}>Lunch</p>
+        <p className={meal === "Lunch" ? "click" : undefined}>Lunch</p>
       </Link>
       <Link to={"/meal/Dinner"} className="link">
-        <p className={meal === "Dinner" && "click"}>Dinner</p>
+        <p className={meal === "Dinner" ? "click" : undefined}>Dinner</p>
       </Link>
       <Link to={"/meal/Snack"} className="link">
-        <p className={meal === "Snack" && "click"}>Snack</p>
+        <p className={meal === "Snack" ? "click" : undefined}>Snack</p>
       </Link>
       <Link to={"/meal/Dessert"} className="link">
-        <p className={meal === "Dessert" && "click"}>Dessert</p>
+        <p className={meal === "Dessert" ? "click" : undefined}>Dessert</p>
       </Link>
       <Link to={"/meal/Beverage"} className="link">
-        <p className={meal === "Beverage" && "click"}>Beverage</p>
+        <p className={meal === "Beverage" ? "click" : undefined}>Beverage</p>
       </Link>
     </div>
   );

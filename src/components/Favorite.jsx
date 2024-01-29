@@ -5,9 +5,16 @@ const Favorite = () => {
   const favItems = useSelector((store) => store.favoriteItem);
   return (
     <div className="container recipe-container">
-      {favItems.map((favItem) => (
-        <FoodItem key={favItem.id} recipe={favItem} />
-      ))}
+      {favItems.length === 0 ? (
+        <div className="empty">
+          Oops, There is no favorite item in your list 😕 <br />
+          😊 Try adding some 😊
+        </div>
+      ) : (
+        favItems.map((favItem) => (
+          <FoodItem key={favItem.id} recipe={favItem} />
+        ))
+      )}
     </div>
   );
 };
