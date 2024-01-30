@@ -6,6 +6,7 @@ import { useRef } from "react";
 import axios from "axios";
 import { setSearchItem } from "../index.js";
 import Navigation from "./Navigation.jsx";
+import { HiOutlineViewList } from "react-icons/hi";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const Header = () => {
             {fav ? (
               <span>
                 <FcLike />
-                <span class="position-relative top-0 start-0 translate-middle badge rounded-pill bg-success fs-6">
+                <span className="position-relative top-0 start-0 translate-middle badge rounded-pill bg-success fs-6">
                   {favItems.length}
                 </span>
               </span>
@@ -52,6 +53,9 @@ const Header = () => {
               <CiHeart />
             )}
           </Link>
+        </p>
+        <p className="menu">
+          <HiOutlineViewList />
         </p>
       </div>
     </div>

@@ -18,6 +18,10 @@ const Quotes = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setQuoteIndex((quoteIndex) => (quoteIndex + 1) % quotes.length);
+      document.querySelector(".quote").classList.add("scale-up-center");
+      setTimeout(() => {
+        document.querySelector(".quote").classList.remove("scale-up-center");
+      }, 500);
     }, 5000);
 
     return () => clearInterval(intervalId);
@@ -25,7 +29,7 @@ const Quotes = () => {
 
   return (
     <div className="container quotes">
-      <p className="scale-up-center">{quotes[quoteIndex]}</p>
+      <p className="quote">{quotes[quoteIndex]}</p>
     </div>
   );
 };

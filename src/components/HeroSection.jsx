@@ -2,7 +2,6 @@ import Carousel from "./Carousel.jsx";
 const HeroSection = () => {
   return (
     <div className="container-lg hero-section">
-      {/* <img src="Eating together.gif" alt="" /> */}
       <div className="hero-content">
         <h1>
           Unlock Flavorful <br />

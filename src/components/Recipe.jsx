@@ -5,8 +5,6 @@ const Recipe = () => {
   const { id } = useParams();
   const foodItems = useSelector((store) => store.foodItem);
   const recipe = foodItems.filter((foodItem) => foodItem.id === Number(id));
-  console.log(recipe);
-  console.log("TADAAA");
   return (
     <div className="container recipe-landing-page">
       <div className="left-container">

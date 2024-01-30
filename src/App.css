@@ -28,6 +28,17 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: -3px;
+}
+
+.right-box .menu {
+  font-size: 35px;
+  display: none;
+}
+
+.right-box .menu {
+  cursor: pointer;
 }
 
 .search {
@@ -36,18 +47,16 @@ body {
   outline: none;
   border: none;
   border-radius: 20px;
-  width: 15rem;
+  width: 18rem;
   position: relative;
-  top: -8px;
+  top: -5px;
   margin-right: 20px;
   background-color: black;
-  transition: all 0.8s ease-in-out;
 }
 
 .fav {
-  position: relative;
-  top: -7px;
-  font-size: 40px;
+  font-size: 35px;
+  margin-right: 10px;
 }
 
 .fav:hover {
@@ -59,7 +68,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 
@@ -147,9 +156,11 @@ body {
 }
 
 .food-item {
+  flex: 1;
   padding: 7px;
   background-color: rgb(22, 22, 22);
-  width: 15rem;
+  min-width: 13rem;
+  max-width: 15rem;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -204,6 +215,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 50px;
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 
@@ -285,5 +297,53 @@ body {
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+
+  .right-box .menu {
+    display: block;
+    font-size: 25px;
+  }
+
+  .right-box .fav {
+    font-size: 25px;
+  }
+
+  .logo {
+    width: 5rem;
+  }
+
+  .search {
+    width: 10rem;
+    font-size: 16px;
+  }
+
+  .hero-section {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .carousel-box {
+    width: 80vw;
+  }
+
+  .recipe-landing-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-container {
+    width: 80vw;
+  }
+  .right-container {
+    width: 95vw;
   }
 }
