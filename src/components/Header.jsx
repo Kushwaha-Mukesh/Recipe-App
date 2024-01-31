@@ -1,19 +1,21 @@
 import { CiHeart } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { FcLike } from "react-icons/fc";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import axios from "axios";
 import { setSearchItem } from "../index.js";
 import Navigation from "./Navigation.jsx";
 import { HiOutlineViewList } from "react-icons/hi";
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const favItems = useSelector((store) => store.favoriteItem);
   const fav = favItems.length > 0;
   const searchRef = useRef();
+  const { meal } = useParams();
   const searchItem = async (e) => {
     if (e.key === "Enter") {
       const search = searchRef.current.value;
@@ -55,7 +57,37 @@ const Header = () => {
           </Link>
         </p>
         <p className="menu">
-          <HiOutlineViewList />
+          <HiOutlineViewList onClick={() => setShowMenu(!showMenu)} />
+          {showMenu && (
+            <div className="menu-list">
+              <Link to={"/meal/Breakfast"} className="link">
+                <p className={meal === "Breakfast" ? "click" : undefined}>
+                  Breakfast
+                </p>
+              </Link>
+              <Link to={"/meal/Lunch"} className="link">
+                <p className={meal === "Lunch" ? "click" : undefined}>Lunch</p>
+              </Link>
+              <Link to={"/meal/Dinner"} className="link">
+                <p className={meal === "Dinner" ? "click" : undefined}>
+                  Dinner
+                </p>
+              </Link>
+              <Link to={"/meal/Snack"} className="link">
+                <p className={meal === "Snack" ? "click" : undefined}>Snack</p>
+              </Link>
+              <Link to={"/meal/Dessert"} className="link">
+                <p className={meal === "Dessert" ? "click" : undefined}>
+                  Dessert
+                </p>
+              </Link>
+              <Link to={"/meal/Beverage"} className="link">
+                <p className={meal === "Beverage" ? "click" : undefined}>
+                  Beverage
+                </p>
+              </Link>
+            </div>
+          )}
         </p>
       </div>
     </div>
